@@ -23,5 +23,79 @@
 #
 ##############################################################################
 
-__version__ = 'develop'
-__all__ = ['client', 'exceptions', 'api']
+import unittest
+
+from namecheap.api import *
+
+class NCAPI(object):
+    def setUp(self):
+        pass
+
+    def tearDown(self):
+        pass
+
+    #TODO: Actual tests!
+
+class NCDomain(NCAPI):
+    def setUp(self):
+        pass
+
+    def tearDown(self):
+        pass
+
+    #TODO: Actual tests!
+
+class NCDomainDNS(NCAPI):
+    def setUp(self):
+        pass
+
+    def tearDown(self):
+        pass
+
+    #TODO: Actual tests!
+
+class NCDomainNS(NCAPI):
+    def setUp(self):
+        pass
+
+    def tearDown(self):
+        pass
+
+    #TODO: Actual tests!
+
+class NCDomainTransfer(NCAPI):
+    def setUp(self):
+        pass
+
+    def tearDown(self):
+        pass
+
+    #TODO: Actual tests!
+
+class NCSSL(NCAPI):
+    def setUp(self):
+        pass
+
+    def tearDown(self):
+        pass
+
+    #TODO: Actual tests!
+
+class NCUser(NCAPI):
+    def setUp(self):
+        pass
+
+    def tearDown(self):
+        pass
+
+    #TODO: Actual tests!
+
+class NCUserAddress(NCAPI):
+    def setUp(self):
+        pass
+
+    def tearDown(self):
+        pass
+
+    #TODO: Actual tests!
+

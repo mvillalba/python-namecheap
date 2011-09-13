@@ -23,5 +23,15 @@
 #
 ##############################################################################
 
-__version__ = 'develop'
-__all__ = ['client', 'exceptions', 'api']
+import unittest
+
+from namecheap.client import *
+
+class NCClientTest(unittest.TestCase):
+    def setUp(self):
+        pass
+
+    def tearDown(self):
+        pass
+
+    #TODO: Actual tests!
