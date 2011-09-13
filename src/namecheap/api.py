@@ -118,21 +118,21 @@ class NCAPI(object):
             system = doc['Errors']['Number'][0:2]
 
             if system == '10':
-                raise NCAuthenticationException(doc)
+                raise NCAuthenticationError(doc)
             elif system == '20':
-                raise NCValidationException(doc)
+                raise NCValidationError(doc)
             elif system == '25':
-                raise NCPaymentException(doc)
+                raise NCPaymentError(doc)
             elif system == '30':
-                raise NCProviderException(doc)
+                raise NCProviderError(doc)
             elif system == '35':
                 raise NCPolicyError(doc)
             elif system == '40':
                 raise NCSystemError(doc)
             elif system == '50':
-                raise NCUnknownException(doc)
+                raise NCUnknownError(doc)
             else:
-                raise NCException(doc)
+                raise NCError(doc)
 
         return doc
 

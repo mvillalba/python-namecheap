@@ -276,7 +276,7 @@ NC_PARAM_TEXT = {
     '250': 'CiraRegistrant',
 }
 
-class NCException(Exception):
+class NCError(Exception):
     def __init__(self, doc):
         self.doc = doc
         self.number = doc['Errors']['Number']
@@ -296,24 +296,24 @@ class NCException(Exception):
                 self.param, self.text)
         )
 
-class NCAuthenticationError(NCException):
+class NCAuthenticationError(NCError):
     pass
 
-class NCValidationError(NCException):
+class NCValidationError(NCError):
     pass
 
-class NCPaymentError(NCException):
+class NCPaymentError(NCError):
     pass
 
-class NCProviderError(NCException):
+class NCProviderError(NCError):
     pass
 
-class NCPolicyError(NCException):
+class NCPolicyError(NCError):
     pass
 
-class NCSystemError(NCException):
+class NCSystemError(NCError):
     pass
 
-class NCUnknownError(NCException):
+class NCUnknownError(NCError):
     pass
 
