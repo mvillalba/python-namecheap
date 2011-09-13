@@ -31,8 +31,9 @@ http://github.com/mvillalba/python-namecheap
 Project documentation (Sphinx) is at:
 NOT-HOSTED-ANYWHERE-YET
 
-Backup GIT repository:
+Backup GIT repositories:
 https://gitorious.org/python-namecheap/python-namecheap
+http://repo.or.cz/w/python-namecheap.git
 
 
 Release Checklist
