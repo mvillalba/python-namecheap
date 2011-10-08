@@ -38,35 +38,45 @@ http://repo.or.cz/w/python-namecheap.git
 
 Release Checklist
 -----------------
- * Clone upstream to clean directory
+ * Deactivate virtualenv environment, if active
+ * Clone upstream to clean directory (setup all remotes!)
  * Bootstrap environment
  * Start release branch (git-flow)
+ * Set/check version number (setup.py, project's __init__.py, docs)
  * Run pylint
  * Run importchecker
    % importchecker src
  * Run pep8
    % pep8 -r src --count --statistics
- * Set/check version number (setup.py, project's __init__.py, docs)
  * Run test suite and check test coverage
    % nosetests --with-coverage --cover-inclusive --cover-erase
  * Freeze dependencies' version numbers in buildout.cfg and setup.py
  * Check bug database for open issues/bugs
  * Build documentation
  * Check documentation (coverage, grammar, contents, etc)
- * Update CHANGES
+ * Update CHANGES.md
  * Update copyright statements if new year
  * Update setup.py
  * Create distribution bundles
-   % buildout setup . sdist bdist bdist_egg
- * Check dist/* files (no plain text root passwords, all files present, do
-   they work in a separate virtualenv with pip? do tests still pass?)
+   % buildout setup . sdist bdist_egg
+ * Check dist/* files (no nuclear launch codes, all files present, do they work
+   in a separate virtualenv with pip?)
  * Upload to PyPI
-   % buildout setup . register upload
+   % buildout setup . sdist bdist_egg register upload
  * Check package page in PyPI (readme, download links)
+ * If first release, delete dummy "develop" version from PyPI
  * Re-test release in a clean environment, installing from the cheeseshop
  * Finish git-flow release and add release tag and commit release
- * Push upstream (GitHub master, gitorious backup)
- * Upload dist files to GitHub
+ * Push upstream (GitHub master, gitorious backup, odin backup)
+   % git push --all all && git push --tags all
+ * Close old feature branches (GitHub)
+   % git push origin :feature/{NAME-HERE}
+ * Upload dist files to GitHub and download them to check integrity
+ * Unfreeze version numbers from setup.py and buildout.cfg
+ * Set version number to "develop" (setup.py, project's __init__.py, docs)
+ * Go back to old development repo and update everything
+   % git checkout develop && git pull origin develop
+   % git checkout master && git pull origin master
  * Upload built documentation
  * Make public announcement, if necessary
 
